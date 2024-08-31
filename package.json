@@ -1,13 +1,14 @@
 {
   "name": "telegram-sherlock-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Telegram bot that uses the Sherlock tool for username searches across social networks.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["telegram", "bot", "sherlock", "username search"],
+  "author": "Your Name",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.5",
