@@ -11,17 +11,17 @@ bot.start((ctx) => {
 bot.on('text', (ctx) => {
     const username = ctx.message.text.trim();
 
-    // Validate the username
+    
     if (!username || username.length < 3) {
         return ctx.reply('❌ Please enter a valid username (at least 3 characters).');
     }
 
     ctx.reply('🔍 Searching for the username... This might take a few minutes, so please be patient. ⏳');
 
-    // Use the global `sherlock` command
+    
     const command = `sherlock ${username}`;
 
-    // Execute Sherlock command
+    
     exec(command, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing Sherlock: ${error}`);
@@ -32,8 +32,8 @@ bot.on('text', (ctx) => {
             return ctx.reply('⚠️ An error occurred while searching. Please try again later.');
         }
 
-        // Split the output if it's too long
-        const messages = stdout.match(/[\s\S]{1,4000}/g); // Splits the output into chunks of 4000 characters
+        
+        const messages = stdout.match(/[\s\S]{1,4000}/g); 
 
         if (messages) {
             messages.forEach((message, index) => {
